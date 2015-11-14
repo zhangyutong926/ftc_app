@@ -34,6 +34,10 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
+import gisdyt.ftc.opmodes.GISDYTTankControl;
+import gisdyt.ftc.opmodes.GISDYTTest1;
+import gisdyt.ftc.opmodes.LegacyTest;
+
 /**
  * Register Op Modes
  */
@@ -96,5 +100,9 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("PushBotDriveTouch", PushBotDriveTouch.java);
     //manager.register("PushBotIrSeek", PushBotIrSeek.java);
     //manager.register("PushBotSquare", PushBotSquare.java);
+
+    manager.register("GISDYTTest1", GISDYTTest1.class);
+    manager.register("GISDYTTankControl", GISDYTTankControl.class);
+    manager.register("LegacyTester", LegacyTest.class);
   }
 }
