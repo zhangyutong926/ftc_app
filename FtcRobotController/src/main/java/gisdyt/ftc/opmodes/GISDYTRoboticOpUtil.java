@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class GISDYTRoboticOpUtil {
 
-    public static void set_motors(List<DcMotor> motor_list, DcMotorController.RunMode mode){
+    public static void confMotors(List<DcMotor> motor_list, DcMotorController.RunMode mode){
         Iterator<DcMotor> iter=motor_list.iterator();
         while(iter.hasNext()){
             DcMotor temp=iter.next();
@@ -19,7 +19,7 @@ public class GISDYTRoboticOpUtil {
         }
     }
 
-    public static void arcade2(float ward_axis, float rotate_axis, DcMotor motor_left, DcMotor motor_right, boolean inv_left, boolean inv_right){
+    public static void joystickArcade2(float ward_axis, float rotate_axis, DcMotor motor_left, DcMotor motor_right, boolean inv_left, boolean inv_right){
         double l=ward_axis+rotate_axis;
         double r=-(ward_axis-rotate_axis);
         if(l<-1.0) l=-1.0;
@@ -32,7 +32,7 @@ public class GISDYTRoboticOpUtil {
         else motor_left.setPower(r);
     }
 
-    public static void aracade4(float ward_axis, float rotate_axis, DcMotor motor_left1, DcMotor motor_left2, DcMotor motor_right1, DcMotor motor_right2, boolean inv_left1, boolean inv_left2, boolean inv_right1, boolean inv_right2){
+    public static void joystickArcade4(float ward_axis, float rotate_axis, DcMotor motor_left1, DcMotor motor_left2, DcMotor motor_right1, DcMotor motor_right2, boolean inv_left1, boolean inv_left2, boolean inv_right1, boolean inv_right2){
         double l=ward_axis+rotate_axis;
         double r=-(ward_axis-rotate_axis);
         if(l<-1.0) l=-1.0;
@@ -49,14 +49,21 @@ public class GISDYTRoboticOpUtil {
         else motor_left2.setPower(r);
     }
 
-    public static void tank2(float left_axis, float right_axis, DcMotor motor_left, DcMotor motor_right, boolean inv_left, boolean inv_right){
+    public static void joystickTank2(float left_axis, float right_axis, DcMotor motor_left, DcMotor motor_right, boolean inv_left, boolean inv_right){
         if(!inv_left) motor_left.setPower(left_axis);
         else motor_left.setPower(-left_axis);
         if(!inv_right) motor_right.setPower(-right_axis);
         else motor_right.setPower(right_axis);
     }
 
-    public static void tank4(){
-
+    public static void joystickTank4(float left_axis, float right_axis, DcMotor motor_left1, DcMotor motor_left2, DcMotor motor_right1, DcMotor motor_right2, boolean inv_left1, boolean inv_left2, boolean inv_right1, boolean inv_right2){
+        if(inv_left1) motor_left1.setPower(left_axis);
+        else motor_left1.setPower(-left_axis);
+        if(inv_left2) motor_left2.setPower(left_axis);
+        else motor_left2.setPower(-left_axis);
+        if(inv_right1) motor_right1.setPower(-right_axis);
+        else motor_right1.setPower(right_axis);
+        if(inv_right2) motor_right2.setPower(-right_axis);
+        else motor_right2.setPower(right_axis);
     }
 }
