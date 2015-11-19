@@ -34,6 +34,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
+import gisdyt.ftc.opmodes.GISDYTAutomaticallyProgramTesting;
 import gisdyt.ftc.opmodes.GISDYTTankControl;
 import gisdyt.ftc.opmodes.GISDYTTest1;
 import gisdyt.ftc.opmodes.GISDYTTestArcade4;
@@ -106,5 +107,6 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("GISDYTTankControl", GISDYTTankControl.class);
     manager.register("LegacyTester", LegacyTest.class);
     manager.register("GISDYTUtilArcadeTester", GISDYTTestArcade4.class);
+    manager.register("GISDYTAutomaticallyProgramTesting", GISDYTAutomaticallyProgramTesting.class);
   }
 }

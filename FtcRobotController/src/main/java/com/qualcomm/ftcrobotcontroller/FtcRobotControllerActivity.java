@@ -103,6 +103,8 @@ public class FtcRobotControllerActivity extends Activity {
 
   protected FtcEventLoop eventLoop;
 
+  public static FtcRobotControllerActivity activity;
+
   protected class RobotRestarter implements Restarter {
 
     public void requestRestart() {
@@ -174,6 +176,7 @@ public class FtcRobotControllerActivity extends Activity {
     hittingMenuButtonBrightensScreen();
 
     if (USE_DEVICE_EMULATION) { HardwareFactory.enableDeviceEmulation(); }
+    activity=this;
   }
 
   @Override
